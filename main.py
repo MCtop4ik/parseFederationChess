@@ -39,6 +39,7 @@ def getContent(html):
             .replace('<a href="', "").replace('">', "*").replace("\n", "")
     parseOtherThings(otherParametrs)
     print(d)
+    print(otherParametrs)
 
 
 def parseOtherThings(other):
@@ -102,6 +103,11 @@ def parseOtherThings(other):
             else:
                 title += other[i]
         d['title'] = title.replace("        ", "")
+    if other.find("Федерация: ") != -1:
+        federation = ""
+        for i in range(3):
+            federation += other[other.find("Федерация: ") + 11 + i]
+        d['federation'] = federation
 
 
 fhr_id = input("Введи айди ФШР:\n")
