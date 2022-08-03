@@ -45,9 +45,9 @@ def getContent(html):
 def parseOtherThings(other):
     if other.find("Разряд") != -1:
         grade = ""
-        if other.find != "Гроссмейстер":
+        if other.find("Гроссмейстер") != -1:
             grade = "Гроссмейстер"
-        elif other.find != "Мастер спорта":
+        elif other.find("Мастер спорта") != -1:
             grade = "Мастер спорта"
         else:
             for i in range(other.find("Разряд") + 6, len(other)):
